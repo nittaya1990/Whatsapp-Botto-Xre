@@ -20,6 +20,7 @@ export class Message {
     constructor(private client: Client, public group: GroupEx) {}
 
     handleGroupMessage = async (M: WAMessage): Promise<void> => {
+        const { msg } = require('./nonPrefix.js')
         const from = M.key.remoteJid
         if (!from) return
 
